@@ -133,6 +133,11 @@ footer{background:var(--darker);padding:2.5rem 3rem;display:flex;justify-content
 .wa{position:fixed;bottom:1.8rem;right:1.8rem;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:200;box-shadow:0 2px 16px rgba(37,211,102,0.3)}
 .wa svg{width:25px;height:25px;fill:#fff}
 
+/* BOOKING */
+.booking-sec{background:var(--darkest);padding:5.5rem 3rem}
+.booking-inner{max-width:900px;margin:0 auto}
+.booksy-wrap{display:flex;justify-content:center;margin-top:1rem}
+
 /* RESPONSIVE */
 @media(max-width:768px){
   nav{padding:0.9rem 1.2rem}
@@ -160,6 +165,7 @@ footer{background:var(--darker);padding:2.5rem 3rem;display:flex;justify-content
     <a href="#services">Services</a>
     <a href="#reviews">Reviews</a>
     <a href="#gallery">Gallery</a>
+    <a href="#booking">Book</a>
     <a href="#contact">Contact</a>
   </div>
   <a href="https://booksy.com/en-us/1077220_br-hair-lounge_barber-shop_26844_charlotte" target="_blank"><button class="nav-cta">Book Now</button></a>
@@ -260,6 +266,18 @@ footer{background:var(--darker);padding:2.5rem 3rem;display:flex;justify-content
     <div class="gal-item"><img src="images/cut4.png" alt="Kids Cut"><div class="gal-cap">Kids Cut</div></div>
     <div class="gal-item"><img src="images/cut5.png" alt="Curly Fade"><div class="gal-cap">Curly Fade</div></div>
     <div class="gal-item"><img src="images/cut6.png" alt="Haircut"><div class="gal-cap">Haircut</div></div>
+  </div>
+</div>
+
+<!-- BOOKING -->
+<div class="booking-sec" id="booking">
+  <div class="booking-inner">
+    <p class="lbl" style="text-align:center">Online Booking</p>
+    <h2 style="text-align:center">Book Your Appointment</h2>
+    <div class="bar" style="margin:0 auto 2.5rem"></div>
+    <div class="booksy-wrap">
+      <script type="text/javascript" src="https://booksy.com/widget/code.js?id=1077220&country=us&lang=en"></script>
+    </div>
   </div>
 </div>
 
