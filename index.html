@@ -5,7 +5,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BR Hair Lounge · Charlotte, NC</title>
 <meta name="description" content="Premium barbershop in Charlotte, NC. Haircuts, fades, beard trims, kids cuts. Walk-ins welcome. 1816 Galleria Blvd, Suite C.">
+<link rel="canonical" href="https://brhairlounge.com/">
+
+<!-- Favicons -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<meta name="theme-color" content="#0d0d0d">
+
+<!-- Open Graph -->
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="BR Hair Lounge · Charlotte, NC">
+<meta property="og:description" content="Premium barbershop in Charlotte, NC. Haircuts, fades, beard trims, kids cuts. Walk-ins welcome. 1816 Galleria Blvd, Suite C.">
+<meta property="og:url" content="https://brhairlounge.com/">
+<meta property="og:site_name" content="BR Hair Lounge">
+<meta property="og:image" content="https://brhairlounge.com/images/salon.jpg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1440">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BR Hair Lounge · Charlotte, NC">
+<meta name="twitter:description" content="Premium barbershop in Charlotte, NC. Haircuts, fades, beard trims, kids cuts. Walk-ins welcome.">
+<meta name="twitter:image" content="https://brhairlounge.com/images/salon.jpg">
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BarberShop",
+  "name": "BR Hair Lounge",
+  "image": "https://brhairlounge.com/images/salon.jpg",
+  "url": "https://brhairlounge.com/",
+  "telephone": "+19808992999",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1816 Galleria Blvd, Suite C",
+    "addressLocality": "Charlotte",
+    "addressRegion": "NC",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "17:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "16:00" }
+  ],
+  "sameAs": [
+    "https://instagram.com/brhairlounge",
+    "https://tiktok.com/@brhairlounge"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "198"
+  }
+}
+</script>
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -24,6 +85,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .nav-links a:hover{color:var(--tan)}
 .nav-cta{background:var(--tan);color:var(--darkest);padding:0.55rem 1.4rem;font-size:0.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;border-radius:1px}
 .nav-cta:hover{background:var(--tan-light)}
+.nav-toggle{display:none;background:none;border:none;color:var(--tan);cursor:pointer;padding:6px;margin-left:0.75rem}
+.nav-toggle svg{width:22px;height:22px;display:block}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
@@ -84,8 +147,16 @@ h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);col
 .rev-score{text-align:center;margin-bottom:3rem}
 .rev-stars{font-size:1.3rem;color:var(--tan);letter-spacing:3px}
 .rev-ct{font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:0.3rem}
-.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.rev-card{background:var(--darkest);padding:1.8rem;border:1px solid rgba(210,180,140,0.1)}
+.rev-carousel{max-width:640px;margin:0 auto;display:flex;align-items:center;gap:1rem;padding:0 0.5rem}
+.rev-track-wrap{overflow-x:auto;flex:1;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.rev-track-wrap::-webkit-scrollbar{display:none}
+.rev-track{display:flex}
+.rev-arrow{background:transparent;border:1px solid rgba(210,180,140,0.3);color:var(--tan);width:38px;height:38px;min-width:38px;border-radius:50%;font-size:1.2rem;line-height:1;cursor:pointer;transition:all .25s}
+.rev-arrow:hover{background:var(--tan);color:var(--darkest)}
+.rev-dots{display:flex;justify-content:center;gap:0.5rem;margin-top:1.8rem}
+.rev-dot{width:7px;height:7px;border-radius:50%;background:rgba(210,180,140,0.25);cursor:pointer;transition:background .25s}
+.rev-dot.active{background:var(--tan)}
+.rev-card{background:var(--darkest);padding:1.8rem;border:1px solid rgba(210,180,140,0.1);flex:0 0 100%;scroll-snap-align:center;min-height:190px}
 .rev-s{color:var(--tan);font-size:0.72rem;letter-spacing:2px;margin-bottom:1rem}
 .rev-text{font-size:0.83rem;color:rgba(255,255,255,0.5);line-height:1.85;font-style:italic;margin-bottom:1.2rem}
 .rev-author{display:flex;align-items:center;gap:0.75rem}
@@ -97,7 +168,7 @@ h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);col
 .gallery{background:var(--darkest);padding:5.5rem 0}
 .gal-head{text-align:center;margin-bottom:3rem;padding:0 3rem}
 .gal-head .bar{margin:0 auto}
-.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:230px 230px;gap:4px}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:230px 230px;grid-auto-rows:230px;gap:4px}
 .gal-item{overflow:hidden;position:relative;background:var(--dark)}
 .gal-item:first-child{grid-column:span 2;grid-row:span 2}
 .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s;opacity:.88}
@@ -141,11 +212,13 @@ footer{background:var(--darker);padding:2.5rem 3rem;display:flex;justify-content
 /* RESPONSIVE */
 @media(max-width:768px){
   nav{padding:0.9rem 1.2rem}
-  .nav-links{display:none}
+  .nav-toggle{display:block}
+  .nav-links{display:none;position:fixed;top:100%;left:0;right:0;flex-direction:column;gap:0;background:rgba(13,13,13,0.98);border-bottom:1px solid rgba(210,180,140,0.12);max-height:calc(100vh - 100%);overflow-y:auto}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:1rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.06)}
   section{padding:4rem 1.5rem}
   .about{grid-template-columns:1fr;gap:2rem}
   .svc-grid{grid-template-columns:1fr 1fr}
-  .rev-grid{grid-template-columns:1fr}
   .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
   .gal-item:first-child{grid-column:span 2;grid-row:span 1}
   .info{grid-template-columns:1fr}
@@ -159,8 +232,8 @@ footer{background:var(--darker);padding:2.5rem 3rem;display:flex;justify-content
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo"><img src="images/logo-horizontal.png" alt="BR Hair Lounge"></div>
-  <div class="nav-links">
+  <div class="nav-logo"><img src="images/logo-horizontal.png" alt="BR Hair Lounge" width="360" height="109"></div>
+  <div class="nav-links" id="navLinks">
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#reviews">Reviews</a>
@@ -168,15 +241,20 @@ footer{background:var(--darker);padding:2.5rem 3rem;display:flex;justify-content
     <a href="#booking">Book</a>
     <a href="#contact">Contact</a>
   </div>
-  <a href="https://booksy.com/en-us/1077220_br-hair-lounge_barber-shop_26844_charlotte" target="_blank"><button class="nav-cta">Book Now</button></a>
+  <div style="display:flex;align-items:center">
+    <a href="https://booksy.com/en-us/1077220_br-hair-lounge_barber-shop_26844_charlotte" target="_blank"><button class="nav-cta">Book Now</button></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <img class="hero-bg" src="images/salon.jpg" alt="BR Hair Lounge">
+  <img class="hero-bg" src="images/salon.jpg" alt="BR Hair Lounge" width="1920" height="1440" fetchpriority="high">
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-logo"><img src="images/logo-vertical.png" alt="BR Hair Lounge"></div>
+    <div class="hero-logo"><img src="images/logo-vertical.png" alt="BR Hair Lounge" width="540" height="450"></div>
     <p class="eyebrow">Charlotte, NC · Galleria Blvd</p>
     <h1>Elevating style,<br><em>transforming</em> confidence.</h1>
     <p class="hero-sub">Premium barbershop in Charlotte. <span>Walk in or book your spot.</span></p>
@@ -197,7 +275,7 @@ footer{background:var(--darker);padding:2.5rem 3rem;display:flex;justify-content
 
 <!-- ABOUT -->
 <section class="about" id="about">
-  <img class="about-photo" src="images/salon.jpg" alt="BR Hair Lounge interior">
+  <img class="about-photo" src="images/salon.jpg" alt="BR Hair Lounge interior" width="1920" height="1440" loading="lazy">
   <div>
     <p class="lbl">Our Story</p>
     <h2>More than a haircut —<br>it's a ritual.</h2>
@@ -241,14 +319,21 @@ footer{background:var(--darker);padding:2.5rem 3rem;display:flex;justify-content
     <div class="rev-stars">★★★★★</div>
     <div class="rev-ct">4.9 · 198 reviews on Booksy</div>
   </div>
-  <div class="rev-grid">
-    <div class="rev-card"><div class="rev-s">★★★★★</div><p class="rev-text">"Joao is a great barber. He carefully listens to what you want and gives specialist advice. The lounge is nice with music, coffee, beverages, comic books for kids."</p><div class="rev-author"><div class="rev-av">AG</div><div><div class="rev-name">Augusto</div><div class="rev-svc">Haircut · Confirmed client</div></div></div></div>
-    <div class="rev-card"><div class="rev-s">★★★★★</div><p class="rev-text">"Joao was very professional. He did great cutting my hair and cleaning up my beard. I would have no problem going back to BR in 2 weeks!"</p><div class="rev-author"><div class="rev-av">JC</div><div><div class="rev-name">Joseph Carper</div><div class="rev-svc">Cut + Beard · Confirmed client</div></div></div></div>
-    <div class="rev-card"><div class="rev-s">★★★★★</div><p class="rev-text">"Great service and excellent professionals. Highly recommend BR Hair Lounge to anyone looking for a premium experience in Charlotte."</p><div class="rev-author"><div class="rev-av">TH</div><div><div class="rev-name">Thiago</div><div class="rev-svc">Haircut · Confirmed client</div></div></div></div>
-    <div class="rev-card"><div class="rev-s">★★★★★</div><p class="rev-text">"Very professional! My son loved the haircut. Clean environment, friendly staff and great attention to detail. Will definitely be coming back."</p><div class="rev-author"><div class="rev-av">WF</div><div><div class="rev-name">Wallace F.</div><div class="rev-svc">Kids Cut · Confirmed client</div></div></div></div>
-    <div class="rev-card"><div class="rev-s">★★★★★</div><p class="rev-text">"Clean shop, professional barbers, and the results speak for themselves. 10/10 would recommend to anyone in the Charlotte area."</p><div class="rev-author"><div class="rev-av">OS</div><div><div class="rev-name">Oscar</div><div class="rev-svc">Cut + Beard · Confirmed client</div></div></div></div>
-    <div class="rev-card"><div class="rev-s">★★★★★</div><p class="rev-text">"Amazing experience every time. The team is talented, welcoming and always delivers exactly what I ask for. My go-to spot in Charlotte."</p><div class="rev-author"><div class="rev-av">SY</div><div><div class="rev-name">Sylvana</div><div class="rev-svc">Haircut · Confirmed client</div></div></div></div>
+  <div class="rev-carousel">
+    <button class="rev-arrow" aria-label="Previous review" onclick="revMove(-1)">‹</button>
+    <div class="rev-track-wrap">
+      <div class="rev-track" id="revTrack">
+        <div class="rev-card"><div class="rev-s">★★★★★</div><p class="rev-text">"Joao is a great barber. He carefully listens to what you want and gives specialist advice. The lounge is nice with music, coffee, beverages, comic books for kids."</p><div class="rev-author"><div class="rev-av">AG</div><div><div class="rev-name">Augusto</div><div class="rev-svc">Haircut · Confirmed client</div></div></div></div>
+        <div class="rev-card"><div class="rev-s">★★★★★</div><p class="rev-text">"Joao was very professional. He did great cutting my hair and cleaning up my beard. I would have no problem going back to BR in 2 weeks!"</p><div class="rev-author"><div class="rev-av">JC</div><div><div class="rev-name">Joseph Carper</div><div class="rev-svc">Cut + Beard · Confirmed client</div></div></div></div>
+        <div class="rev-card"><div class="rev-s">★★★★★</div><p class="rev-text">"Great service and excellent professionals. Highly recommend BR Hair Lounge to anyone looking for a premium experience in Charlotte."</p><div class="rev-author"><div class="rev-av">TH</div><div><div class="rev-name">Thiago</div><div class="rev-svc">Haircut · Confirmed client</div></div></div></div>
+        <div class="rev-card"><div class="rev-s">★★★★★</div><p class="rev-text">"Very professional! My son loved the haircut. Clean environment, friendly staff and great attention to detail. Will definitely be coming back."</p><div class="rev-author"><div class="rev-av">WF</div><div><div class="rev-name">Wallace F.</div><div class="rev-svc">Kids Cut · Confirmed client</div></div></div></div>
+        <div class="rev-card"><div class="rev-s">★★★★★</div><p class="rev-text">"Clean shop, professional barbers, and the results speak for themselves. 10/10 would recommend to anyone in the Charlotte area."</p><div class="rev-author"><div class="rev-av">OS</div><div><div class="rev-name">Oscar</div><div class="rev-svc">Cut + Beard · Confirmed client</div></div></div></div>
+        <div class="rev-card"><div class="rev-s">★★★★★</div><p class="rev-text">"Amazing experience every time. The team is talented, welcoming and always delivers exactly what I ask for. My go-to spot in Charlotte."</p><div class="rev-author"><div class="rev-av">SY</div><div><div class="rev-name">Sylvana</div><div class="rev-svc">Haircut · Confirmed client</div></div></div></div>
+      </div>
+    </div>
+    <button class="rev-arrow" aria-label="Next review" onclick="revMove(1)">›</button>
   </div>
+  <div class="rev-dots" id="revDots"></div>
 </section>
 
 <!-- GALLERY -->
@@ -259,13 +344,19 @@ footer{background:var(--darker);padding:2.5rem 3rem;display:flex;justify-content
     <div class="bar"></div>
   </div>
   <div class="gal-grid">
-    <div class="gal-item"><img src="images/salon.jpg" alt="BR Hair Lounge"><div class="gal-cap">The Lounge</div></div>
-    <div class="gal-item"><img src="images/cut1.png" alt="Taper Fade"><div class="gal-cap">Taper Fade</div></div>
-    <div class="gal-item"><img src="images/cut2.png" alt="Slick Back"><div class="gal-cap">Slick Back</div></div>
-    <div class="gal-item"><img src="images/cut3.png" alt="Cut + Beard"><div class="gal-cap">Cut + Beard</div></div>
-    <div class="gal-item"><img src="images/cut4.png" alt="Kids Cut"><div class="gal-cap">Kids Cut</div></div>
-    <div class="gal-item"><img src="images/cut5.png" alt="Curly Fade"><div class="gal-cap">Curly Fade</div></div>
-    <div class="gal-item"><img src="images/cut6.png" alt="Haircut"><div class="gal-cap">Haircut</div></div>
+    <div class="gal-item"><img src="images/salon.jpg" alt="BR Hair Lounge" width="1920" height="1440" loading="lazy"><div class="gal-cap">The Lounge</div></div>
+    <div class="gal-item"><img src="images/cut1.jpg" alt="Taper Fade" width="791" height="1100" loading="lazy"><div class="gal-cap">Taper Fade</div></div>
+    <div class="gal-item"><img src="images/cut2.jpg" alt="Slick Back" width="743" height="1100" loading="lazy"><div class="gal-cap">Slick Back</div></div>
+    <div class="gal-item"><img src="images/cut3.jpg" alt="Cut + Beard" width="1100" height="1032" loading="lazy"><div class="gal-cap">Cut + Beard</div></div>
+    <div class="gal-item"><img src="images/cut4.jpg" alt="Kids Cut" width="902" height="1044" loading="lazy"><div class="gal-cap">Kids Cut</div></div>
+    <div class="gal-item"><img src="images/cut5.jpg" alt="Curly Fade" width="758" height="1100" loading="lazy"><div class="gal-cap">Curly Fade</div></div>
+    <div class="gal-item"><img src="images/cut6.jpg" alt="Haircut" width="1066" height="1100" loading="lazy"><div class="gal-cap">Haircut</div></div>
+    <div class="gal-item"><img src="images/cut7.jpg" alt="Fresh Fade" width="1007" height="1100" loading="lazy"><div class="gal-cap">Fresh Fade</div></div>
+    <div class="gal-item"><img src="images/cut8.jpg" alt="Skin Fade" width="818" height="1100" loading="lazy"><div class="gal-cap">Skin Fade</div></div>
+    <div class="gal-item"><img src="images/cut9.jpg" alt="Textured Side Part" width="748" height="1100" loading="lazy"><div class="gal-cap">Textured Side Part</div></div>
+    <div class="gal-item"><img src="images/cut10.jpg" alt="Curly Mullet" width="755" height="1100" loading="lazy"><div class="gal-cap">Curly Mullet</div></div>
+    <div class="gal-item"><img src="images/cut11.jpg" alt="Curly Mullet" width="806" height="1100" loading="lazy"><div class="gal-cap">Curly Mullet</div></div>
+    <div class="gal-item"><img src="images/cut12.jpg" alt="Textured Crop" width="724" height="1100" loading="lazy"><div class="gal-cap">Textured Crop</div></div>
   </div>
 </div>
 
@@ -304,7 +395,7 @@ footer{background:var(--darker);padding:2.5rem 3rem;display:flex;justify-content
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-seal"><img src="images/selo.png" alt="BR Hair Lounge"></div>
+  <div class="footer-seal"><img src="images/selo.png" alt="BR Hair Lounge" width="180" height="197" loading="lazy"></div>
   <div class="footer-copy">© 2025 BR Hair Lounge · Charlotte, NC<br><span style="color:rgba(210,180,140,0.45);font-style:italic">Elevating style, transforming confidence.</span></div>
   <div class="footer-links">
     <a href="https://instagram.com/brhairlounge" target="_blank">Instagram</a>
@@ -314,9 +405,9 @@ footer{background:var(--darker);padding:2.5rem 3rem;display:flex;justify-content
 </footer>
 
 <!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/19808992999" target="_blank">
+<a href="https://wa.me/19808992999" target="_blank" aria-label="Chat with us on WhatsApp">
   <div class="wa">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </div>
 </a>
 
@@ -326,8 +417,71 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     e.preventDefault();
     const t=document.querySelector(a.getAttribute('href'));
     if(t)t.scrollIntoView({behavior:'smooth'});
+    const nav=document.getElementById('navLinks');
+    const toggle=document.getElementById('navToggle');
+    if(nav&&nav.classList.contains('open')){
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    }
   });
 });
+
+/* MOBILE NAV TOGGLE */
+(function(){
+  const toggle=document.getElementById('navToggle');
+  const nav=document.getElementById('navLinks');
+  if(!toggle||!nav) return;
+  toggle.addEventListener('click',()=>{
+    const isOpen=nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen?'true':'false');
+  });
+})();
+
+/* REVIEWS CAROUSEL */
+(function(){
+  const wrap = document.querySelector('.rev-track-wrap');
+  const track = document.getElementById('revTrack');
+  const dotsWrap = document.getElementById('revDots');
+  if(!wrap||!track||!dotsWrap) return;
+  const cards = Array.from(track.children);
+  let idx = 0, timer, scrollTimeout;
+
+  cards.forEach((_,i)=>{
+    const dot=document.createElement('div');
+    dot.className='rev-dot'+(i===0?' active':'');
+    dot.addEventListener('click',()=>goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+  const dots = Array.from(dotsWrap.children);
+
+  function setActive(i){
+    idx=i;
+    dots.forEach((d,j)=>d.classList.toggle('active', j===i));
+  }
+  function goTo(i){
+    idx=(i+cards.length)%cards.length;
+    wrap.scrollTo({left: idx*wrap.clientWidth, behavior:'smooth'});
+    setActive(idx);
+    resetTimer();
+  }
+  window.revMove = dir => goTo(idx+dir);
+
+  wrap.addEventListener('scroll', ()=>{
+    clearTimeout(scrollTimeout);
+    scrollTimeout=setTimeout(()=>{
+      const i=Math.round(wrap.scrollLeft/wrap.clientWidth);
+      setActive(Math.max(0,Math.min(cards.length-1,i)));
+    },120);
+  });
+
+  function resetTimer(){
+    clearInterval(timer);
+    timer=setInterval(()=>goTo(idx+1), 6000);
+  }
+  resetTimer();
+  wrap.addEventListener('mouseenter', ()=>clearInterval(timer));
+  wrap.addEventListener('mouseleave', resetTimer);
+})();
 </script>
 </body>
 </html>
