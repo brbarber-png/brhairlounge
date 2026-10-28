@@ -151,6 +151,13 @@ nav.scrolled{box-shadow:0 4px 24px rgba(59,50,48,0.12)}
 .svc-list li:nth-child(even){color:var(--gold)}
 .svc-list li small{display:block;font-family:'Poppins',sans-serif;font-weight:300;text-transform:none;font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.5;margin:0.15rem 0 0.9rem}
 
+/* PRODUCTS */
+.products{padding:5.5rem 3rem;background:var(--sand)}
+.products-frame{max-width:1100px;margin:0 auto;border-radius:6px;overflow:hidden;box-shadow:0 24px 50px rgba(44,37,35,0.25)}
+.products-frame img{display:block;width:100%;height:auto}
+.products-note{max-width:1100px;margin:1.4rem auto 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.products-note p{color:var(--ink-soft);font-size:0.95rem;max-width:620px}
+
 /* TEAM (dark cards) */
 .team{padding:6.5rem 3rem}
 .sec-title{font-size:clamp(2.4rem,4.5vw,3.8rem);margin-bottom:2.5rem}
@@ -263,6 +270,7 @@ footer{background:var(--coffee-3);color:rgba(255,255,255,0.65);padding:3.5rem 3r
 @media(max-width:860px){
   nav{padding:0.8rem 1rem}
   .nav-logo img{height:36px}
+  .products{padding:3.5rem 1rem}
   .nav-toggle{display:block}
   .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--sand);border-top:1px solid rgba(59,50,48,0.1);box-shadow:0 12px 24px rgba(59,50,48,0.12)}
   .nav-links.open{display:flex}
@@ -432,6 +440,17 @@ footer{background:var(--coffee-3);color:rgba(255,255,255,0.65);padding:3.5rem 3r
       <li>Hydration<small>Nourishing treatment for moisture and shine.</small></li>
     </ul>
     <a class="btn btn-gold" href="https://booksy.com/en-us/1077220_br-hair-lounge_barber-shop_26844_charlotte" target="_blank" rel="noopener">See all services</a>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="products-frame reveal">
+    <img src="images/products.webp" alt="Only the best for our clients: premium L3VEL3 styling and beard products at BR Hair Lounge" width="1536" height="1024" loading="lazy">
+  </div>
+  <div class="products-note reveal">
+    <p>We finish every cut with professional-grade products. Ask your barber which one fits your hair and style.</p>
+    <a class="btn btn-coffee" href="#booking">Book Now</a>
   </div>
 </section>
 
